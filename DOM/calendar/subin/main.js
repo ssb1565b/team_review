@@ -19,11 +19,12 @@ function addList(e) {
     default:
       return;
   }
-
+  console.log(e.target);
   // 빈칸 선택 여부 확인 및 선택값이 숫자인지 확인
   if (
     e.target.textContent.trim() !== "" &&
-    !isNaN(e.target.textContent.trim())
+    // !isNaN(e.target.textContent.trim())
+    /[0-9]/.test(e.target.textContent)
   ) {
     // 날짜 input의 값 규칙 설정
     dateEl.setAttribute(
@@ -39,15 +40,17 @@ function addList(e) {
 
 function writeSchedule() {
   // input 값 공백의 경우 placeholder 처리
-  if (dateEl.value) {
+  if (!dateEl.value && !contentEl.value) {
     dateEl.setAttribute("placeholder", emptyMessage);
-  } else if (contentEl.value) {
+    contentEl.setAttribute("placeholder", emptyMessage);
+  } else if (!dateEl.value) {
+    dateEl.setAttribute("placeholder", emptyMessage);
+  } else if (!contentEl.value) {
     contentEl.setAttribute("placeholder", emptyMessage);
   }
-  //
   const divEl = document.createElement("div");
   divEl.append(contentEl.value);
-  targetTdEl.append(divEl);
+  targetTdEl.innerText !== "" && targetTdEl.append(divEl);
 
   contentEl.value = "";
 }
