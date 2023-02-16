@@ -1,0 +1,59 @@
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.header .title {
+  width: 1000px;
+  height: 100px;
+  background-color: salmon;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 100px;
+}
+
+.input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.input .inputBox {
+  width: 400px;
+  height: 40px;
+  margin: 10px;
+  padding: 0 10px;
+  border-radius: 10px;
+  box-shadow: none;
+  outline: none;
+  border-style: none;
+  border: 1px solid salmon;
+}
+
+.input .addBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  font-size: 16px;
+  border-style: none;
+  background-color: salmon;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+}
