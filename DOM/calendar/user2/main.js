@@ -21,11 +21,7 @@ function addListTask(e) {
 
   // 4. checkbox 클릭하면 line-through 주기
   checkBox.addEventListener("click", function () {
-    if (checkBox.checked === true) {
-      checkBox.parentNode.style.textDecoration = "line-through";
-    } else {
-      checkBox.parentNode.style.textDecoration = "none";
-    }
+    checkBox.checked ? (checkBox.parentNode.style.textDecoration = "line-through") : (checkBox.parentNode.style.textDecoration = "none");
   });
 
   // 5. 삭제 버튼 누르면 li 삭제
@@ -35,10 +31,9 @@ function addListTask(e) {
   });
 
   // 6. li 리스트 추가
-  li.append(checkBox);
-  li.append(input.value);
-  li.append(deleteBtn);
+  li.append(checkBox, " ", input.value, "  ", deleteBtn);
   ul.append(li);
+  input.value = "";
 }
 
 // 1. '추가' 버튼 누르면 addListTask 함수 실행
