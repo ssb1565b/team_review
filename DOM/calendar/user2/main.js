@@ -33,6 +33,8 @@ function addListTask(e) {
   // 6. li 리스트 추가
   li.append(checkBox, " ", input.value, "  ", deleteBtn);
   ul.append(li);
+
+  // 7. 추가 후 input 에 입력한 값 없어지게
   input.value = "";
 }
 
